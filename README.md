@@ -1,6 +1,8 @@
-Normal Distribution Shiny App
+Random Distribution Shiny App
 ==============
-Generate random normal distributions with your choice of mean, standard deviation, and sample size.
+Generate a random distributions of your choice, and set the parameters.
+
+For a quick look at the app online: https://sharx.shinyapps.io/hospital-app
 
 Easiest way to run the app:
 
