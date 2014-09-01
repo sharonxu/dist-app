@@ -1,32 +1,49 @@
 
 shinyUI(fluidPage(
   titlePanel("Random Distributions"),
+sidebarLayout(
   
-  sidebarLayout(
     sidebarPanel(
       helpText("Generate a random distribution."),
       
       selectInput("type", 
                   label = "Choose a distribution",
-                  choices = c("Binomial","Normal"),
-                  selected = "Binomial"),
-      if (input$type == "Normal"){
+                  choices = c("Binomial","Normal","Poisson"),
+                  selected = "Normal"),
+    
+    conditionalPanel(
+      condition = "input.type == 'Normal'",    
+      
       numericInput("mean", label = "Mean:", value =0),
       
       numericInput("sd", label = "Standard Deviation:", value =1),
-      }
-      else{
-        numericInput("p", label = "p:", value =0.a read, min=),
-      }
-        
       
       sliderInput("n", 
                   label = "Sample size:",
-                  min = 2, max = 500, value = 100)
-      ),
+                  min = 2, max = 1000, value = 100)
+     ),
+    
+    conditionalPanel(
+      condition = "input.type == 'Binomial'",  
+      
+      sliderInput("p", label = "Probability of success:", min=0, max=1, value = 0.5),
+      sliderInput("n1", 
+                  label = "Number of trials n:",
+                  min = 2, max = 1000, value = 100),
+      sliderInput("num", 
+                  label = "Sample size:",
+                  min = 2, max = 1000, value = 100)      
+      )
+    ),
+    
+    conditionalPanel(
+      condition = "input.type == 'Poisson'",  
+   
+      numericInput("lambda", label = "Lambda:", value =0.5)
+    )
+),
 
     mainPanel(plotOutput("plot1"))
-  )
-))
+    )
+    ))
 
-C:/Users/Sharon/Downloads/libimseti-complete.zip/libimseti
