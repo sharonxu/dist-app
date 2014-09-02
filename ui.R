@@ -31,19 +31,19 @@ sidebarLayout(
                   label = "Number of trials n:",
                   min = 2, max = 1000, value = 100),
       sliderInput("num", 
-                  label = "Sample size:",
+                  label = "Number of observations:",
                   min = 2, max = 1000, value = 100)      
-      )
-    ),
+      ),
     
     conditionalPanel(
       condition = "input.type == 'Poisson'",  
    
-      numericInput("lambda", label = "Lambda:", value =0.5)
+      numericInput("lambda", label = "Lambda:", value = 1)
+    
     )
 ),
 
     mainPanel(plotOutput("plot1"))
-    )
+)
     ))
 
