@@ -1,8 +1,8 @@
 Random Distribution Shiny App
 ==============
-Generate a random distributions of your choice, and set the parameters.
+Educational app - visualize shifts in random distributions resulting from parameter and sample size changes.
 
-For a quick look at the app online: https://sharx.shinyapps.io/distr/
+See the app online: https://sharx.shinyapps.io/distr/
 
 Easiest way to run the app:
 
